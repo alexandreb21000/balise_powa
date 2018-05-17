@@ -1,0 +1,1 @@
+isset($_POST['newsletter']) ? 1 : 0

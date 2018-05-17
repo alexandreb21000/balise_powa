@@ -46,12 +46,12 @@ if(isset($_POST['submit'])) { // Si le bontou "Submit" existe alors ...
         $error++;
     }
 
-    if(isset($_POST['newsletter']) && ($_POST['newsletter'] != '')){   
+   /*  if(isset($_POST['newsletter']) && ($_POST['newsletter'] != '')){   
         $newsletter = ($_POST['newsletter']);
     } else {
         $messageError['newsletter'] = "Veuillez cocher pour vous inscrire à la newsletter !";
         $error++;
-    }
+    } */
 
     if(isset($_POST['textarea']) && ($_POST['textarea'] != '')){   // 
         $textarea = htmlentities(trim(htmlspecialchars($_POST['textarea'])));

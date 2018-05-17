@@ -3,7 +3,7 @@
 body {
   background-color: #fff;
   margin: 0 auto;
-  color: #001f33;
+
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
 }
@@ -21,6 +21,7 @@ h3, .h3-like { font-size: 1.5em; }
 .w250   { width: 250px;   }
 .w848   { width: 848px;   }
 .w80   { width: 80%;   }
+.w100   { width: 100%;   }
 
 .v-top {vertical-align: top;}
 .v-middle {vertical-align: middle;}
@@ -37,6 +38,7 @@ h3, .h3-like { font-size: 1.5em; }
 .line-h {line-height: 3em;}
 
 .h30p {height: 30px;}
+.h150p {height: 150px;}
 
 .mrg10p {margin: 10%;}
 .mrg0 {margin: 0;}
@@ -153,14 +155,19 @@ footer{
 .sp-between {justify-content: space-between;}
 .sp-around {justify-content: space-around;}
 
+.flx-col {flex-direction: column;}
+.flx-row {flex-direction: column;}
+
 .dsp-flex {display: flex;}
 .dsp-iflex {display: flex;}
 .flx-wrp {flex-wrap: wrap;}
 
+.flx-items { align-items: center;}
+
 .w100 {width: 100%;}
 
-.flx-col {flex-direction: column;}
-.flx-row {flex-direction: column;}
+
+
 
 .form-style input[type="text"],
 .form-style input[type="date"],
@@ -203,3 +210,5 @@ input[type="submit"]:hover{
   background: #eb4f11;
   color:#fff;
 }
+
+.text-white { color: #fff; }

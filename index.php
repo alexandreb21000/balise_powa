@@ -1,9 +1,18 @@
-<nav class="w250 i-block t-left" method="post">
-                <ul>
-                    <div class="icon-menu dsp-flex sp-between w80">
-                        <li><a href="contact.php"><i class="fas fa-envelope fa-3x"></i></a></li>
-                        <li><a href="index.php"><i class="fas fa-home fa-3x"></i></a></li>
-                    </div>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>IMG - BALISE POWA - Présentation des balises HTML</title>
+    </head>
+    <body class="home">
+        <div class="container">
+        <?php include('header.php'); ?>
+        <section class="w1120 center">
+            <nav class="t-center">
+                <ul> 
                     <li><a class="border-anim" href="com.php" title="Commentaire">!--</a></li>
                     <li><a class="border-anim" href="a.php" title="A">A</a></li>
                     <li><a class="border-anim" href="body.php" title="Body">Body</a></li>
@@ -19,6 +28,12 @@
                     <li><a class="border-anim" href="td.php" title="Td">TD</a></li>
                     <li><a class="border-anim" href="textarea.php" title="Textarea">Textarea</a></li>
                     <li><a class="border-anim" href="title.php" title="Titre">Title</a></li> 
-                    <li><a class="border-anim" href="ul.php" title="Ul">UL</a></li>
-                    </ul>  
+                    <li><a class="border-anim"href="ul.php" title="Ul">UL</a></li>
+                </ul>  
             </nav>
+        </section>
+        
+        <?php include('footer.php'); ?>
+    </div>
+    </body>
+</html>

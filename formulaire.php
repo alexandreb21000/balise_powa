@@ -1,4 +1,7 @@
-<form class="mrg10p flx-col dsp-iflex line-h w80 center" name="form" method="post" action="contact.php">
+
+
+<html>
+<form class="mrg10p flx-col dsp-iflex line-h w80 center" name="form" method="post" action="connect.php">
                         <fieldset class="form-style pad-v10">
                             <div class="dsp-flex sp-around">
                                 <div class="dsp-flex flx-wrp pad-h20">
@@ -39,24 +42,14 @@
                             </div>
                         </fieldset> 
                         <fieldset class="form-style pad-v10 center">
+<?php                       $objetPdo = new PDO('mysql:host=localhost;dbname=formulaire;','root','');
+                            $sql = "select * from balise";
+                            $balises = $objetPdo->query($sql)->fetchAll(PDO::FETCH_ASSOC); ?>                            
                                 <select name="balise" id="balise">
                                     <option value="0">Sélectionnez votre balise</option>
-                                    <option value="--!">--!</option>
-                                    <option value="A">A</option>
-                                    <option value="BODY">BODY</option>
-                                    <option value="DIV">DIV</option>
-                                    <option value="HEAD">HEAD</option>
-                                    <option value="IMG">IMG</option>
-                                    <option value="LI">LI</option>
-                                    <option value="LINK">LINK</option>
-                                    <option value="META">META</option>
-                                    <option value="P">P</option>
-                                    <option value="SELECT">SELECT</option>
-                                    <option value="TABLE">TABLE</option>
-                                    <option value="TD">TD</option>
-                                    <option value="TEXTAREA">TEXTAREA</option>
-                                    <option value="TITLE">TITLE</option>
-                                    <option value="UL">UL</option>
+<?php                               foreach($balises as $balise){ ?>
+                                        <option value="<?php echo $balise['id_balise'] ?>"><?php echo $balise['bal_libelle'] ?></option>
+<?php                               } ?>                                    
                                 </select>
                                 <span class="ft-color-org" id="missBalise"><?php echo (isset($_POST['submit']) && isset($messageError['balise'])) ? $messageError['balise'] : ''; ?></span>
                         </fieldset>
@@ -69,10 +62,17 @@
                             <input name="newsletter" id="news" type="checkbox" value= 'Abonnement'>
                             <span class="ft-color-org" id="missNews"></span>
                         </div>
-                        <span class="error"><?php echo (isset($_POST['submit']) && isset($messageError['newsletter'])) ? $messageError['newsletter'] : ''; ?></span>
+                        <!-- <span class="error"><?php echo (isset($_POST['submit']) && isset($messageError['newsletter'])) ? $messageError['newsletter'] : ''; ?></span> -->
     
                         
                         <fieldset  class="form-style pad-v10 center">
                             <input type="submit" name="submit" value="Valider" id="bouton">
                         </fieldset>
                     </form>
+
+
+                   
+
+
+
+</html>
