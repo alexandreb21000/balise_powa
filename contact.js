@@ -71,7 +71,7 @@
         if(error > 0){
             event.preventDefault();
         } else {
-            alert('Merci !');
+            echo('');
         }
 
 

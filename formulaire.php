@@ -1,7 +1,131 @@
+<?php
+require_once 'fonction.php';
 
+
+    $error = 0;
+    $messageError = array();
+    $message = '';
+
+    if(isset($_POST['submit'])){
+
+        if(isset($_POST['nom']) && ($_POST['nom'] != '')){
+            $nom = htmlentities(trim(htmlspecialchars($_POST['nom'])));
+        } else {
+            $messageError['nom'] = "Veuillez saisir votre nom !";
+            $error++;
+        }
+
+        if(isset($_POST['prenom']) && ($_POST['prenom'] != '')){   
+            $prenom = htmlentities(trim(htmlspecialchars($_POST['prenom'])));
+        } else {
+            $messageError['prenom'] = "Veuillez saisir votre prénom !";
+            $error++;
+        }
+
+     /*    if(isset($_POST['mail']) && ($_POST['mail'] != '')){   
+            if (filter_var($_POST['mail'],FILTER_VALIDATE_EMAIL)) {
+                $mail = $_POST['mail']; 
+            } else {
+                $messageError['mail'] = "Veuillez saisir un mail valide !";
+                $error++;
+            }
+    } */
+
+    if(isset($_POST['mail']) && ($_POST['mail'] != '')){  
+       if(is_a_mail($_POST['mail'])){
+        $mail = $_POST['mail']; 
+       } else {
+           $messageError['mail'] = "Format du mail invalide";
+           $error++;
+       }
+    } else {
+        $messageError['mail'] = "Veuillez saisir un mail valide !";
+        $error++;
+    }
+
+
+        
+        
+        /* if(isset($_POST['mail']) && ($_POST['mail'] != '')){   
+            (filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL));
+        } else {
+            $messageError['mail'] = "Veuillez saisir un mail valide !";
+            $error++;
+        }  */
+
+       /*  if(filter_var($mail, FILTER_VALIDATE_EMAIL)){
+            echo 'ça marche';
+        } else {
+            echo 'Veuillez rentrer un mail valide';
+        } */
+
+        if(isset($_POST['balise']) && ($_POST['balise'] != '')){   
+            $balise = ($_POST['balise']);
+        } else {
+            $messageError['balise'] = "Veuillez sélectionner votre balise !";
+            $error++;
+        }
+
+        if(isset($_POST['niveau']) && ($_POST['niveau'] != '')){   
+            $niveau = ($_POST['niveau']);
+        } else {
+            $messageError['niveau'] = "Veuillez sélectionner votre niveau !";
+            $error++;
+        }
+
+        if(isset($_POST['textarea']) && ($_POST['textarea'] != '')){
+            $textarea = htmlentities(trim(htmlspecialchars($_POST['textarea'])));
+        } else {
+            $messageError['textarea'] = "Veuillez écrire du texte !";
+            $error++;
+        }
+   
+
+    if ($error == 0) {
+
+        $objetPdo = new PDO('mysql:host=localhost;dbname=formulaire;','root','');
+
+        $pdoStat = $objetPdo->prepare(
+                        "INSERT INTO CONTACT (
+                            CON_NOM,
+                            CON_PRENOM,
+                            CON_MAIL,
+                            CON_NIVEAU,
+                            CON_NEWSLETTER,
+                            CON_QUESTION,
+                            ID_BALISE) VALUES (
+                            :CON_NOM,
+                            :CON_PRENOM,
+                            :CON_MAIL,
+                            :CON_NIVEAU,
+                            :CON_NEWSLETTER,
+                            :CON_QUESTION,
+                            :ID_BALISE)"
+                    );
+
+        $pdoStat->bindValue(':CON_NOM', $nom, PDO::PARAM_STR);
+        $pdoStat->bindValue(':CON_PRENOM', $prenom, PDO::PARAM_STR);
+        $pdoStat->bindValue(':CON_MAIL', $mail, PDO::PARAM_STR);
+        $pdoStat->bindValue(':CON_NIVEAU', $niveau, PDO::PARAM_STR);
+        $pdoStat->bindValue(':CON_NEWSLETTER', isset($_POST['newsletter']) ? 1 : 0, PDO::PARAM_INT);
+        $pdoStat->bindValue(':CON_QUESTION', $textarea, PDO::PARAM_STR);
+        $pdoStat->bindValue(':ID_BALISE', $balise, PDO::PARAM_INT);
+        
+        $insterIsOk = $pdoStat->execute();
+
+        if($insterIsOk){
+            $message = 'Le contact a bien été ajouté dans la bdd.';
+        }
+        else {
+            $message = 'Echec';
+        }
+    }
+}
+
+?>
 
 <html>
-<form class="mrg10p flx-col dsp-iflex line-h w80 center" name="form" method="post" action="connect.php">
+<form class="mrg10p flx-col dsp-iflex line-h w80 center" name="form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                         <fieldset class="form-style pad-v10">
                             <div class="dsp-flex sp-around">
                                 <div class="dsp-flex flx-wrp pad-h20">
@@ -67,12 +191,8 @@
                         
                         <fieldset  class="form-style pad-v10 center">
                             <input type="submit" name="submit" value="Valider" id="bouton">
+                            <span> <?php echo $message; ?> </span>
                         </fieldset>
                     </form>
-
-
-                   
-
-
-
 </html>
+
