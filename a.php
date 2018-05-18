@@ -8,15 +8,15 @@
         <link rel="stylesheet" href="style.css">
         <title>A - BALISE POWA - Présentation des balises HTML</title>
     </head>
-    <body>
+    <body class="bgcolor-white font-arial">
         <?php include('header.php'); ?>
         <main class="w1120 center">  
         <?php include('menu.php'); ?><!--
                 --><section class="w848 i-block v-top s-section">
-                <h2 class="t-left active v-marg"><code>&lt;a&gt;</code></h2>
+                <h2 class="t-left ft-color-org v-marg fs-1-8em"><code>&lt;a&gt;</code></h2>
                     <p class="t-left v-marg">La balise <code class="ft-size-2em">&lt;a&gt;</code> permet de représenter une image dans un document.
                     </p>
-                <h3 class="t-left t-align v-marg">Attributs spécifiques</h3>
+                <h3 class="t-left t-align v-marg fs-1-5em">Attributs spécifiques</h3>
                 <div class="l-attribut">
                     <ul>
                         <li>href="http://...": Hyperlien vers une page Web..</li>

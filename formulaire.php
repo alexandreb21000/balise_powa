@@ -31,18 +31,17 @@ require_once 'fonction.php';
             }
     } */
 
-    if(isset($_POST['mail']) && ($_POST['mail'] != '')){  
-       if(is_a_mail($_POST['mail'])){
+    if(isset($_POST['mail']) && ($_POST['mail'] != '')){ 
+        if(is_a_mail($_POST['mail'])){
         $mail = $_POST['mail']; 
-       } else {
-           $messageError['mail'] = "Format du mail invalide";
-           $error++;
-       }
-    } else {
+        } else {
+        $messageError['mail'] = "Format du mail invalide";
+        $error++;
+        }
+        } else {
         $messageError['mail'] = "Veuillez saisir un mail valide !";
         $error++;
-    }
-
+        }
 
         
         

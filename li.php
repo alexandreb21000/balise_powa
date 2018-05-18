@@ -8,15 +8,15 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <title>LI - BALISE POWA - Présentation des balises HTML</title>
     </head>
-    <body>
+    <body class="bgcolor-white font-arial">
         <?php include('header.php'); ?>
         <main class="w1120 center">  
         <?php include('menu.php'); ?><!--
             --><section class="w848 i-block v-top">
-                <h2 class="t-left active v-marg"><code>&lt;li&gt;</code></h2>
+                <h2 class="t-left ft-color-org v-marg fs-1-8em"><code>&lt;li&gt;</code></h2>
                     <p class="t-left v-marg">La balise <code class="ft-size-2em">&lt;li&gt;</code> est utilisée pour représenter un élément dans une liste. Il doit être contenu dans un élément parent : une liste ordonnée ("ol"), une liste non ordonnée ("ul") ou un menu ("menu"). Dans les menus et les listes non ordonnées, les éléments de liste sont habituellement affichés en utilisant des puces. Dans les listes ordonnées, ils sont habituellement affichés avec compteur croissant à gauche, tel qu'un nombre ou une lettre.
                     </p>
-                <h3 class="t-left v-marg t-align">Attributs spécifiques</h3>
+                <h3 class="t-left v-marg t-align fs-1-5em">Attributs spécifiques</h3>
                 <div class="l-attribut">    
                     <ul>
                         <li>Pas d'attribut spécifique.</li>

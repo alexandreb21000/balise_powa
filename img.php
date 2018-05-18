@@ -8,15 +8,15 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <title>IMG - BALISE POWA - Présentation des balises HTML</title>
     </head>
-    <body>
+    <body class="bgcolor-white font-arial">
         <?php include('header.php'); ?>
         <main class="w1120 center">  
         <?php include('menu.php'); ?><!--
             --><section class="w848 i-block v-top">
-                <h2 class="t-left active v-marg"><code>&lt;img&gt;</code></h2>
+                <h2 class="t-left ft-color-org v-marg fs-1-8em"><code>&lt;img&gt;</code></h2>
                     <p class="t-left v-marg">La balise <code class="ft-size-2em">&lt;img&gt;</code> permet de représenter une image dans un document.
                     </p>
-                <h3 class="t-left v-marg t-align">Attributs spécifiques</h3>
+                <h3 class="t-left v-marg t-align fs-1-5em">Attributs spécifiques</h3>
                 <div class="l-attribut">    
                     <ul>
                         <li>src="nomdefichier": emplacement et nom du fichier image (format bmp, jpg, gif).</li>

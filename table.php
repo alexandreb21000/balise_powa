@@ -8,16 +8,16 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <title>TABLE - BALISE POWA - Présentation des balises HTML</title>
     </head>
-    <body>
+    <body class="bgcolor-white font-arial">
         <?php include('header.php'); ?>
         <main class="w1120 center">  
         <?php include('menu.php'); ?><!--
             --><section class="w848 i-block v-top">
-                <h2 class="t-left active v-marg"><code>&lt;table&gt;</code></h2>
+                <h2 class="t-left ft-color-org v-marg fs-1-8em"><code>&lt;table&gt;</code></h2>
                     <p class="t-left v-marg">La balise <code class="ft-size-2em">&lt;table&gt;</code> permet de représenter un tableau de données, 
                     c'est-à-dire des informations exprimées sur un tableau en deux dimensions.
                     </p>
-                <h3 class="t-left v-marg t-align">Attributs spécifiques</h3>
+                <h3 class="t-left v-marg t-align fs-1-5em">Attributs spécifiques</h3>
                 <div class="l-attribut">    
                     <ul>
                         <li>cols=x: Tableau composé de x colonnes.</li>

@@ -7,8 +7,8 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <title>IMG - BALISE POWA - Présentation des balises HTML</title>
     </head>
-    <body class="home">
-        <div class="container">
+    <body class="home bgcolor-white font-arial">
+        <div class="dsp-flex min-h100vh flx-col ">
         <?php include('header.php'); ?>
         <section class="w1120 center">
             <nav class="t-center">

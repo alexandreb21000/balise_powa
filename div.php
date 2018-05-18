@@ -8,16 +8,16 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <title>DIV - BALISE POWA - Présentation des balises HTML</title>
     </head>
-    <body>
+    <body class="bgcolor-white font-arial">
         <?php include('header.php'); ?>
         <main class="w1120 center">  
         <?php include('menu.php'); ?><!--
             --><section class="w848 i-block v-top">
-                <h2 class="t-left active v-marg"><code>&lt;div&gt;</code></h2>
+                <h2 class="t-left ft-color-org v-marg fs-1-8em"><code>&lt;div&gt;</code></h2>
                     <p class="t-left v-marg">La balise <code class="ft-size-2em">&lt;div&gt;</code> est un conteneur générique qui permet d'organiser le contenu. 
                     Il peut être utilisé afin de grouper d'autres éléments pour leur appliquer un style.
                     </p>
-                <h3 class="t-left v-marg t-align">Attributs spécifiques</h3>
+                <h3 class="t-left v-marg t-align fs-1-5em">Attributs spécifiques</h3>
                 <div class="l-attribut">    
                     <ul>
                         <li>class: Cet attribut permet de définir la ou les classes auxquelles appartient un élément afin de le manipuler en script ou de le mettre en forme avec CSS.

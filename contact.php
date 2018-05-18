@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="style.css">
         <title>CONTACT - BALISE POWA - Présentation des balises HTML</title>
     </head>
-    <body>
+    <body class="bgcolor-white font-arial">
         <?php include('header.php'); ?>
         <main class="w1120 center">  
         <?php include('menu.php'); ?><!--
